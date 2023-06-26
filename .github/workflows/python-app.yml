@@ -10,8 +10,10 @@ permissions:
   contents: read
 
 jobs:
-  build-ubuntu:
+  build:
+    name: Build Themes
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.11
@@ -29,7 +31,9 @@ jobs:
     - name: Build themes
       run: |
         python buildthemes.py
-    - name: Release
+    - name: Upload Themes
       uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
       with:
         files: Themes.zip
+        tag_name: ${{ github.event.head_commit.url }}
