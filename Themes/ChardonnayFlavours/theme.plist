@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ThemeName</key>
+	<string>Chardonnay (Flavours)</string>
+	<key>ThemeAuthor</key>
+	<string>Jazzzny</string>
+	<key>ThemeDescription</key>
+	<string></string>
+	<key>ThemeVersion</key>
+	<string>1.0</string>
+	<key>MaskFiles</key>
+	<dict>
+		<key>Apple.png</key>
+		<string>287x287+156+103</string>
+		<key>ExtApple.png</key>
+		<string>287x287+156+103</string>
+		<key>AppleRecv.png</key>
+		<string>300x300+110+100</string>
+		<key>ExtAppleRecv.png</key>
+		<string>300x300+110+100</string>
+	</dict>
+</dict>
+</plist>
