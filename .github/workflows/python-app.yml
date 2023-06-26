@@ -24,8 +24,8 @@ jobs:
         unzip OpenCore-0.9.3-RELEASE.zip
         ls
         export PATH="OpenCore-0.9.3-RELEASE/Utilities/icnspack:$PATH"
-        mv Utilities/icnspack Utilities/icnspack.mac
-        mv Utilities/icnspack.linux Utilities/icnspack
+        mv Utilities/icnspack/icnspack Utilities/icnspack/icnspack.mac
+        mv Utilities/icnspack/icnspack.linux Utilities/icnspack/icnspack
     - name: Build themes
       run: |
         python 
