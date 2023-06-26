@@ -23,7 +23,7 @@ jobs:
         wget "https://github.com/acidanthera/OpenCorePkg/releases/download/0.9.3/OpenCore-0.9.3-RELEASE.zip"
         unzip OpenCore-0.9.3-RELEASE.zip
         ls
-        export PATH="Utilities/icnspack:$PATH"
+        export PATH="/home/runner/work/oclp-theme-gen/oclp-theme-gen/Utilities/icnspack:$PATH"
         mv Utilities/icnspack/icnspack Utilities/icnspack/icnspack.mac
         mv Utilities/icnspack/icnspack.linux Utilities/icnspack/icnspack
     - name: Build themes
