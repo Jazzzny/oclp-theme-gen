@@ -106,7 +106,7 @@ for theme in os.listdir("Themes"):
                         f"PNGOut/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}_1x.png"
                     ])
                     subprocess.run([
-                        "icnspack",
+                        "/home/runner/work/oclp-theme-gen/oclp-theme-gen/Utilities/icnspack/icnspack",
                         f"CompiledThemes/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}.icns",
                         f"PNGOut/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}_1x.png",
                         f"PNGOut/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}_2x.png"
