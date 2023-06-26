@@ -16,8 +16,8 @@ try:
     subprocess.call(["icnspack"],
                     stdout=subprocess.DEVNULL,
                     stderr=subprocess.STDOUT)
-except FileNotFoundError:
-        raise Exception("icnspack is not installed or set in the PATH.")
+except:
+        pass
 
 curpath = os.path.abspath(os.getcwd())
 
