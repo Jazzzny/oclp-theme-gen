@@ -1,4 +1,4 @@
-# OpenCore Legacy Patcher icon generation script
+# Icon generation script
 # Copyright © 2023 Jazzzny
 
 import os
