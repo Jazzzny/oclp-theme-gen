@@ -8,10 +8,10 @@ on:
 
 permissions:
   contents: write
-  
+
 jobs:
   build:
-    name: Build Themes
+    name: Build themes
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -39,7 +39,7 @@ jobs:
         git config --global user.email "actions@github.com"
         git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
         git push origin $TAG
-    - name: Upload Themes
+    - name: Upload themes
       uses: softprops/action-gh-release@v1
       with:
         files: Themes.zip
