@@ -33,7 +33,6 @@ jobs:
         python buildthemes.py
     - name: Upload Themes
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
       with:
         files: Themes.zip
         tag_name: ${{ github.event.head_commit.url }}
