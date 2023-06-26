@@ -8,12 +8,11 @@ on:
 
 permissions:
   contents: write
-
+  
 jobs:
   build:
     name: Build Themes
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.11
@@ -26,7 +25,6 @@ jobs:
         unzip OpenCore-0.9.3-RELEASE.zip
         mv Utilities/icnspack/icnspack Utilities/icnspack/icnspack.mac
         mv Utilities/icnspack/icnspack.linux Utilities/icnspack/icnspack
-    - run: |
         echo "$GITHUB_WORKSPACE/Utilities/icnspack" >> $GITHUB_PATH
     - name: Build themes
       run: |
