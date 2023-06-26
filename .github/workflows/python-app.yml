@@ -28,9 +28,9 @@ jobs:
         mv Utilities/icnspack/icnspack.linux Utilities/icnspack/icnspack
     - name: Build themes
       run: |
-        python 
-    - name: Upload a Build Artifact
+        python buildthemes.py
+    - name: Upload themes
       uses: actions/upload-artifact@v3.1.2
       with:
         name: FetchArchiveTube-Linux
-        path: ./dist/fetcharchivetube
+        path: themes.zip
