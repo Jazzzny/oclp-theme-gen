@@ -1,0 +1,35 @@
+name: Build themes
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Set up icnspack
+      run: |
+        curl -O https://github.com/acidanthera/OpenCorePkg/releases/download/0.9.3/OpenCore-0.9.3-RELEASE.zip
+        unzip OpenCore-0.9.3-RELEASE.zip
+        export PATH="OpenCore-0.9.3-RELEASE/Utilities/icnspack:$PATH"
+        mv OpenCore-0.9.3-RELEASE/Utilities/icnspack OpenCore-0.9.3-RELEASE/Utilities/icnspack.mac
+        mv OpenCore-0.9.3-RELEASE/Utilities/icnspack.linux OpenCore-0.9.3-RELEASE/Utilities/icnspack
+    - name: Build themes
+      run: |
+        python 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: FetchArchiveTube-Linux
+        path: ./dist/fetcharchivetube
