@@ -34,7 +34,7 @@ jobs:
     - name: Create tag
       id: tag
       run: |
-        TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
+        TAG=$(date -Iseconds | sed 's/[T:\+]/-/g')
         echo "$TAG"
         echo "tag=$TAG" >> $GITHUB_OUTPUT
         git config user.name "GitHub Actions"
