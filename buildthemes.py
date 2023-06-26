@@ -10,14 +10,14 @@ from distutils.dir_util import copy_tree
 
 try:
     subprocess.check_output(["convert"])
-except FileNotFoundError:
+except:
         raise Exception("ImageMagick is not installed or set in the PATH.")
 try:
     subprocess.call(["icnspack"],
                     stdout=subprocess.DEVNULL,
                     stderr=subprocess.STDOUT)
 except:
-        print("d")
+            raise Exception("icnspack is not installed or set in the PATH.")
 
 curpath = os.path.abspath(os.getcwd())
 
@@ -106,7 +106,7 @@ for theme in os.listdir("Themes"):
                         f"PNGOut/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}_1x.png"
                     ])
                     subprocess.run([
-                        "/home/runner/work/oclp-theme-gen/oclp-theme-gen/Utilities/icnspack/icnspack",
+                        "icnspack",
                         f"CompiledThemes/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}.icns",
                         f"PNGOut/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}_1x.png",
                         f"PNGOut/{theme}/{mask.split('.')[0]}{filename.split('.')[0]}_2x.png"
