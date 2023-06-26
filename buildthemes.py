@@ -17,7 +17,7 @@ try:
                     stdout=subprocess.DEVNULL,
                     stderr=subprocess.STDOUT)
 except:
-        pass
+        print("d")
 
 curpath = os.path.abspath(os.getcwd())
 
