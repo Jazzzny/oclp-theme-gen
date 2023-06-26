@@ -20,8 +20,7 @@ jobs:
         python-version: "3.11"
     - name: Set up icnspack
       run: |
-        curl -O https://github.com/acidanthera/OpenCorePkg/releases/download/0.9.3/OpenCore-0.9.3-RELEASE.zip
-        ls
+        wget "https://github.com/acidanthera/OpenCorePkg/releases/download/0.9.3/OpenCore-0.9.3-RELEASE.zip"
         unzip OpenCore-0.9.3-RELEASE.zip
         export PATH="OpenCore-0.9.3-RELEASE/Utilities/icnspack:$PATH"
         mv OpenCore-0.9.3-RELEASE/Utilities/icnspack OpenCore-0.9.3-RELEASE/Utilities/icnspack.mac
