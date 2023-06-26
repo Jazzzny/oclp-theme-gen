@@ -26,7 +26,6 @@ jobs:
         export PATH="/home/runner/work/oclp-theme-gen/oclp-theme-gen/Utilities/icnspack:$PATH"
         mv Utilities/icnspack/icnspack Utilities/icnspack/icnspack.mac
         mv Utilities/icnspack/icnspack.linux Utilities/icnspack/icnspack
-        icnspack
     - name: Build themes
       run: |
         python buildthemes.py
