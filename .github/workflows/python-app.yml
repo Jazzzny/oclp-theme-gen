@@ -31,12 +31,14 @@ jobs:
     - name: Build themes
       run: |
         python buildthemes.py
-    - name: Tag the repository
+    - name: Create tag
       id: tag
       run: |
         TAG=v$(date -Iseconds | sed 's/[T:\+]/-/g')
         echo "$TAG"
         echo "tag=$TAG" >> $GITHUB_OUTPUT
+        git config user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
         git tag -a $TAG -m "Published version $TAG" ${GITHUB_SHA}
         git push origin $TAG
     - name: Upload Themes
